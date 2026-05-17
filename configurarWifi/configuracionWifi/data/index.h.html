@@ -1,0 +1,175 @@
+const char* index_html = R"rawliteral(
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuración WiFi</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: linear-gradient(135deg, #fff 0%, #fff 50%, #fff 100%);
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header {
+      background: linear-gradient(90deg, #0d2444, #0d2444);
+      color: white;
+      width: 100%;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+      border-bottom: 2px solid #378ADD;
+    }
+
+    .header span {
+      color: #85B7EB;
+      font-size: 14px;
+      display: block;
+      margin-top: 4px;
+      font-weight: 400;
+    }
+
+    .card {
+      background: #0d2444;
+      border: 1px solid #fcfcfc;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 20px 16px;
+      width: calc(100% - 32px);
+      max-width: 420px;
+    }
+
+    .card-title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: #85B7EB;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #185FA5;
+    }
+
+    .field {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 14px 0;
+    }
+
+    .field label {
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .field input {
+      background: #ffffff;
+      border: 1.5px solid #0c0074;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-size: 16px;
+      color: rgb(0, 0, 0);
+      width: 160px;
+      text-align: center;
+      outline: none;
+    }
+
+    .field input::placeholder {
+      color: #378ADD;
+      opacity: 0.6;
+    }
+
+    .field input:focus {
+      border-color: #378ADD;
+      box-shadow: 0 0 0 3px rgba(55, 138, 221, 0.2);
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(90deg, #df0a0a, #003e7c);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .btn:active {
+      background: #333da7;
+    }
+
+    .status {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 14px;
+      color: #85B7EB;
+    }
+
+    .status.ok  { color: #5DCAA5; }
+    .status.err { color: #F0997B; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Safe step</h1>
+    
+  </div>
+
+  <div class="card">
+    <div class="card-title">Red WiFi</div>
+
+    <div class="field">
+      <label>SSID</label>
+      <input type="text" id="ssid" placeholder="Nombre red">
+    </div>
+
+    <div class="field">
+      <label>Contraseña</label>
+      <input type="text" id="pass" placeholder="*******">
+    </div>
+
+    <button class="btn" onclick="guardar()">Guardar</button>
+    <div class="status" id="status"></div>
+  </div>
+
+</body>
+<script>
+  function guardar() {
+    const ssid = document.getElementById('ssid').value;
+    const pass = document.getElementById('pass').value;
+    const status = document.getElementById('status');
+
+    if (ssid === '') {
+      status.className = 'status err';
+      status.innerText = 'El SSID no puede estar vacío';
+      return;
+    }
+
+    status.className = 'status';
+    status.innerText = 'Guardando...';
+
+    fetch('/update?ssid=' + encodeURIComponent(ssid) + '&pass=' + encodeURIComponent(pass))
+      .then(() => {
+        status.className = 'status ok';
+        status.innerText = 'Guardado';
+      })
+      .catch(() => {
+        status.className = 'status err';
+        status.innerText = 'Error al guardar';
+      });
+  }
+</script>
+</html>
+)rawliteral";
