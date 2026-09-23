@@ -7,7 +7,8 @@
 #include <Adafruit_Sensor.h>
 #include <Wire.h>
 #include <HTTPClient.h>
-
+#include <WiFiClientSecure.h>
+#include <PubSubClient.h>
 
 #define MAX_ACCEPTED_RANGE 4.0f
 
@@ -18,17 +19,25 @@
 const uint8_t LED_PIN = 8;
 
 // Constants for WiFi connection
-const char* ssid = "Tesalia";
-const char* password = "Tesalia2025@";
+const char* ssid = "TesaliaAP";
+const char* password = "00000000";
 
 // Constants for telegram bot communication
-const String token = "8359027548:AAGx7Zui7lM_4sDnaiO2_EfQTXBO3uR7_2U";
-const String chat_id = "8321887291";
+const String token = "8166432197:AAHqb__1MKaeXF2SiN6GWeCcmJXjiG74qrc";
+const String chat_id = "8585740332";
+
+//Configuración EMQX Cloud
+const char* mqtt_server = "cf01cf3c.ala.us-east-1.emqxsl.com"; 
+const int mqtt_port = 8883;
+const char* mqtt_user = "safe_step"; 
+const char* mqtt_pass = "jorge1234";
 
 // static unsigned long last_interval_ms = 0;
 
 // Create object for mpu
 Adafruit_MPU6050 mpu;
+WiFiClientSecure espClient;
+PubSubClient client(espClient);
 
 void setup() {
   pinMode(LED_PIN, OUTPUT);
@@ -69,9 +78,9 @@ void setup() {
   
   digitalWrite(LED_PIN, LOW);
   Serial.println("\nConectado. IP: " + WiFi.localIP().toString());
-  ArduinoOTA.setHostname("SAFE-STEP");
-  ArduinoOTA.setPassword("123456");
-  ArduinoOTA.begin();
+  //ArduinoOTA.setHostname("SAFE-STEP");
+  //ArduinoOTA.setPassword("123456");
+  //ArduinoOTA.begin();
 }
 
 float ei_get_sign(float number) {
@@ -104,11 +113,26 @@ void sendTelegramMessage() {
     Serial.println("Message send");
   }
 }
-
+void reconnect() {
+  while (!client.connected()) {
+    Serial.print("Intentando conexión MQTT segura...");
+    
+    if (client.connect("ESP32_Baston_Jorge", mqtt_user, mqtt_pass, "baston/estado", 1, true, "OFFLINE")) {
+      Serial.println("¡CONECTADO CON ÉXITO!");
+      // Publicamos que estamos ONLINE al conectar
+      client.publish("baston/estado", "ONLINE", true);
+    } else {
+      Serial.print("Error, rc=");
+      Serial.print(client.state());
+      Serial.println(" Reintentando en 5 segundos...");
+      delay(5000);
+    }
+  }
+}
 
 void loop() {
   ArduinoOTA.handle();
-
+  
   ei_printf("\nComenzando inferencia en 500 milisegundos...\n");
 
   delay(300);

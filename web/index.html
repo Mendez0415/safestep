@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe-Step · Detección de caídas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section id="inicio" class="hero">
+      <div class="container hero-content">
+        <p class="eyebrow">Dispositivo portátil</p>
+        <h1>Detecta una caída antes de que se convierta en una emergencia.</h1>
+        <p class="hero-text">
+          Safe-Step monitorea el movimiento en tiempo real y avisa
+          automáticamente cuando detecta una caída, para que la ayuda
+          llegue a tiempo.
+        </p>
+        <div class="hero-actions">
+          <a href="#como-funciona" class="btn btn-primary">Ver cómo funciona</a>
+          <a href="#contacto" class="btn btn-secondary">Contactar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ESTADO EN VIVO (simulado con JS) ===== -->
+    <section id="estado" class="status-section">
+      <div class="container">
+        <h2>Estado del dispositivo</h2>
+        <div class="status-card" id="statusCard">
+          <div class="status-indicator" id="statusIndicator"></div>
+          <div class="status-info">
+            <p class="status-label">Estado actual</p>
+            <p class="status-value" id="statusValue">Cargando...</p>
+          </div>
+          <button class="btn btn-outline" id="simulateFallBtn">
+            Simular caída
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CÓMO FUNCIONA ===== -->
+    <section id="como-funciona" class="steps-section">
+      <div class="container">
+        <h2>Cómo funciona</h2>
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-number">1</div>
+            <h3>Detección</h3>
+            <p>Sensores de movimiento analizan la aceleración y orientación del cuerpo de forma constante.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-number">2</div>
+            <h3>Análisis</h3>
+            <p>El algoritmo identifica patrones compatibles con una caída real, evitando falsas alarmas.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-number">3</div>
+            <h3>Alerta</h3>
+            <p>Se envía una notificación automática a los contactos de emergencia definidos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CARACTERÍSTICAS ===== -->
+    <section id="caracteristicas" class="features-section">
+      <div class="container">
+        <h2>Características</h2>
+        <ul class="features-list">
+          <li>Batería de larga duración</li>
+          <li>Resistente al agua</li>
+          <li>Notificaciones a múltiples contactos</li>
+          <li>Sin necesidad de conexión a internet fija</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto" class="contact-section">
+      <div class="container">
+        <h2>Contacto</h2>
+        <form id="contactForm" class="contact-form">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Correo</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+        <p id="formFeedback" class="form-feedback"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Safe-Step. Proyecto de práctica.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

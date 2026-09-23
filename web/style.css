@@ -1,0 +1,37 @@
+/* =========================
+   VARIABLES
+========================= */
+:root {
+  --color-bg: #F7F9FA;
+  --color-text: #14213D;
+  --color-accent: #2E9E6C;
+  --color-alert: #D64545;
+  --font-base: sans-serif;
+}
+
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =========================
+   TUS ESTILOS AQUÍ
+   (header, hero, secciones, etc.)
+========================= */
