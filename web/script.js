@@ -1,14 +1,13 @@
-// =========================
-// SAFE-STEP · script.js
-// =========================
+function iniciarCarrusel(selector, intervaloMs) {
+  const imagenes = document.querySelectorAll(selector);
+  let indiceActual = 0;
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Aquí vas a inicializar tus funciones
-  // cuando el HTML ya esté cargado.
-});
+  setInterval(() => {
+    imagenes[indiceActual].classList.remove('active');
+    indiceActual = (indiceActual + 1) % imagenes.length;
+    imagenes[indiceActual].classList.add('active');
+  }, intervaloMs);
+}
 
-// Ejemplo mínimo para guiarte:
-// const boton = document.getElementById("simulateFallBtn");
-// boton.addEventListener("click", () => {
-//   console.log("caída simulada");
-// });
+iniciarCarrusel('.device-stage .carousel-img', 3500);
+iniciarCarrusel('.adapt-visual .carousel-img', 4000);

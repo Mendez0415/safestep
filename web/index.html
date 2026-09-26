@@ -3,112 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Safe-Step · Detección de caídas</title>
+  <title>Safe-Step</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <main>
-
-    <!-- ===== HERO ===== -->
-    <section id="inicio" class="hero">
-      <div class="container hero-content">
-        <p class="eyebrow">Dispositivo portátil</p>
-        <h1>Detecta una caída antes de que se convierta en una emergencia.</h1>
-        <p class="hero-text">
-          Safe-Step monitorea el movimiento en tiempo real y avisa
-          automáticamente cuando detecta una caída, para que la ayuda
-          llegue a tiempo.
-        </p>
-        <div class="hero-actions">
-          <a href="#como-funciona" class="btn btn-primary">Ver cómo funciona</a>
-          <a href="#contacto" class="btn btn-secondary">Contactar</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== ESTADO EN VIVO (simulado con JS) ===== -->
-    <section id="estado" class="status-section">
-      <div class="container">
-        <h2>Estado del dispositivo</h2>
-        <div class="status-card" id="statusCard">
-          <div class="status-indicator" id="statusIndicator"></div>
-          <div class="status-info">
-            <p class="status-label">Estado actual</p>
-            <p class="status-value" id="statusValue">Cargando...</p>
-          </div>
-          <button class="btn btn-outline" id="simulateFallBtn">
-            Simular caída
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CÓMO FUNCIONA ===== -->
-    <section id="como-funciona" class="steps-section">
-      <div class="container">
-        <h2>Cómo funciona</h2>
-        <div class="steps-grid">
-          <article class="step-card">
-            <div class="step-number">1</div>
-            <h3>Detección</h3>
-            <p>Sensores de movimiento analizan la aceleración y orientación del cuerpo de forma constante.</p>
-          </article>
-          <article class="step-card">
-            <div class="step-number">2</div>
-            <h3>Análisis</h3>
-            <p>El algoritmo identifica patrones compatibles con una caída real, evitando falsas alarmas.</p>
-          </article>
-          <article class="step-card">
-            <div class="step-number">3</div>
-            <h3>Alerta</h3>
-            <p>Se envía una notificación automática a los contactos de emergencia definidos.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CARACTERÍSTICAS ===== -->
-    <section id="caracteristicas" class="features-section">
-      <div class="container">
-        <h2>Características</h2>
-        <ul class="features-list">
-          <li>Batería de larga duración</li>
-          <li>Resistente al agua</li>
-          <li>Notificaciones a múltiples contactos</li>
-          <li>Sin necesidad de conexión a internet fija</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ===== CONTACTO ===== -->
-    <section id="contacto" class="contact-section">
-      <div class="container">
-        <h2>Contacto</h2>
-        <form id="contactForm" class="contact-form">
-          <label for="name">Nombre</label>
-          <input type="text" id="name" name="name" required>
-
-          <label for="email">Correo</label>
-          <input type="email" id="email" name="email" required>
-
-          <label for="message">Mensaje</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-
-          <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
-        <p id="formFeedback" class="form-feedback"></p>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Safe-Step. Proyecto de práctica.</p>
+  <!-- Barra de navegación -->
+  <nav>
+    <div class="nav-inner">
+      <div class="brad" >Paso seguro</div>
+      <ul class="navlinks">
+        <li><a href="index.html" Class="active">Home</a></li>
+        <li><a href="Contactos.html">Contactos</a></li>
+        <li><a href="Manual.html">Manual</a></li>
+        <li><a href="SafeStep.html">SafeStep</a></li> 
+      </ul>
     </div>
-  </footer>
+  </nav>
+
+<!-- Banner -->
+ <header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <div class="Kicker">Detecta · Alerta · Protege</div>
+      <h1>Safe Step</h1>
+      <p>Tecnología inteligente que reconoce una caída en segundos y avisa a quien cuida de ti, incluso cuando no puedes pedir ayuda tú mismo.</p>
+      <div class="cta-row">
+        <a href="SafeStep.html" class="btn btn-primary">Conocer SafeStep</a>
+        <a href="Manual.html" class="btn btn-ghost ">Ver manual</a>
+      </div>
+  </div>
+ <div class="device-stage">
+  <div class="carousel">
+    <img src="img/Brazalete.png" alt="Brazalete SafeStep" class="carousel-img active">
+    <img src="img/Baston.png" alt="Brazalete SafeStep vista lateral" class="carousel-img">
+    <img src="img/Mano.png" alt="Brazalete SafeStep en uso" class="carousel-img">
+  </div>
+ </div>
+  </div>  
+ </header>
+
+ <!-- Sección de características -->
+  <section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>¿Y si una caída pudiera <span class="highlight">detectarse a tiempo</span>?</h2>
+      <p>SafeStep identifica los movimientos de una caída y envía una alerta directa a la aplicación, sin que nadie tenga que hacer nada más.</p>
+    </div>
+
+    <div class="grid-4">
+      <div class="card">
+        <div class="icon-badge badge-violet">🛡️</div>
+        <h3>Detección de caídas</h3>
+        <p>Identifica patrones de movimiento asociados a una posible caída, en tiempo real.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon-badge badge-coral">🔔</div>
+        <h3>Notificación al instante</h3>
+        <p>Envía una alerta a la app SafeStep en el momento en que se detecta una caída.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon-badge badge-teal">🧠</div>
+        <h3>Inteligencia artificial</h3>
+        <p>Usa un modelo entrenado con Edge Impulse para analizar el movimiento del dispositivo.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon-badge badge-violet">🔋</div>
+        <h3>Batería recargable</h3>
+        <p>Batería Li-Po de 250 mAh con carga mediante módulo TP4056.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de adaptabilidad -->
+<section>
+  <div class="wrap">
+    <div class="adapt">
+      <div class="adapt-visual">
+        <div class="carousel">
+          <img src="img/Edad.png" alt="SafeStep en bastón" class="carousel-img active">
+          <img src="img/Discapacitado.png" alt="SafeStep en brazalete" class="carousel-img">
+        </div>
+      </div>
+
+      <div class="adapt-copy">
+        <h3>Diseñado para adaptarse</h3>
+        <p>SafeStep no es un solo dispositivo — es un sistema que se integra donde ya se apoya la persona.</p>
+
+        <ul class="check-list">
+          <li><span class="check">✓</span> Bastones</li>
+          <li><span class="check">✓</span> Brazaletes</li>
+          <li><span class="check">✓</span> Otros accesorios</li>
+        </ul>
+
+        <div class="audience-row">
+          <div class="audience">
+            <div class="emoji">🧓</div>
+            <span>Adultos mayores</span>
+          </div>
+          <div class="audience alt">
+            <div class="emoji">♿</div>
+            <span>Personas con discapacidad</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de llamada a la acción -->
+<section>
+  <div class="wrap">
+    <div class="cta-banner">
+      <h2>Conoce SafeStep</h2>
+      <p>Descubre cómo funciona, revisa el manual completo o ponte en contacto con nosotros.</p>
+      <div class="cta-row center">
+        <a href="Manual.html" class="btn btn-primary">Ver manual</a>
+        <a href="Contactos.html" class="btn btn-ghost">Contacto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 SafeStep — Tecnología para el cuidado que acompaña.</p>
+</footer>
+
+
+
 
   <script src="script.js"></script>
 </body>
