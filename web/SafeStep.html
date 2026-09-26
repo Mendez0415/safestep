@@ -1,26 +1,235 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SafeStep</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<nav>
-		<div class="nav-inner">
-			<div class="brand">Paso seguro</div>
-			<ul class="navlinks">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="Contactos.html">Contactos</a></li>
-				<li><a href="Manual.html">Manual</a></li>
-				<li><a href="SafeStep.html" class="active">SafeStep</a></li>
-			</ul>
-		</div>
-	</nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafeStep — El dispositivo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <div class="brad" >
+        <span style="--i:1">P</span>
+        <span style="--i:2">a</span>
+        <span style="--i:3">s</span>
+        <span style="--i:4">o</span>
+        <span style="--i:5">&nbsp;</span> <!-- Espacio entre palabras -->
+        <span style="--i:6">s</span>
+        <span style="--i:7">e</span>
+        <span style="--i:8">g</span>
+        <span style="--i:9">u</span>
+        <span style="--i:10">r</span>
+        <span style="--i:11">o</span>
+      </div>
+        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+        <ul class="navlinks" id="navlinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="contactos.html">Contactos</a></li>
+          <li><a href="manual.html">Manual</a></li>
+          <li><a href="safestep.html" class="active">SafeStep</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="product-intro">
+      <div class="wrap">
+        <div class="kicker">El dispositivo</div>
+        <h1 class="product-title">
+          Un sensor pequeño. Una tranquilidad enorme.
+        </h1>
+        <p class="product-lead">
+          SafeStep combina un sensor de movimiento con inteligencia artificial
+          entrenada específicamente para reconocer una caída — y avisar a quien
+          cuida de ti en el momento en que ocurre.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Cómo funciona</h2>
+          <p>
+            Todo el proceso ocurre en segundos, sin que la persona tenga que
+            hacer nada.
+          </p>
+        </div>
+        <div class="flow-row">
+          <div class="flow-step">
+            <div class="icon-badge badge-violet">📡</div>
+            <h3>Detecta</h3>
+            <p>
+              El sensor MPU6050 registra el movimiento del cuerpo de forma
+              continua.
+            </p>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="icon-badge badge-teal">🧠</div>
+            <h3>Analiza</h3>
+            <p>
+              Un modelo de IA entrenado con Edge Impulse identifica si el patrón
+              corresponde a una caída.
+            </p>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">
+            <div class="icon-badge badge-coral">🔔</div>
+            <h3>Alerta</h3>
+            <p>
+              La app SafeStep recibe la notificación al instante, incluso en
+              segundo plano.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Especificaciones</h2>
+        </div>
+        <div class="specs-grid">
+          <div class="spec-card">
+            <span class="spec-label">Sensor</span>
+            <span class="spec-value">Acelerómetro y giroscopio MPU6050</span>
+          </div>
+          <div class="spec-card">
+            <span class="spec-label">Procesamiento</span>
+            <span class="spec-value"
+              >Modelo de IA on-device con Edge Impulse</span
+            >
+          </div>
+          <div class="spec-card">
+            <span class="spec-label">Conectividad</span>
+            <span class="spec-value">WiFi + MQTT sobre EMQX Cloud</span>
+          </div>
+          <div class="spec-card">
+            <span class="spec-label">Notificaciones</span>
+            <span class="spec-value"
+              >Push en tiempo real vía Firebase (FCM)</span
+            >
+          </div>
+          <div class="spec-card">
+            <span class="spec-label">Batería</span>
+            <span class="spec-value">Li-Po 250 mAh, recargable vía TP4056</span>
+          </div>
+          <div class="spec-card">
+            <span class="spec-label">Accesorios compatibles</span>
+            <span class="spec-value">Bastón, brazalete y otros accesorios</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Galería</h2>
+        </div>
+        <div class="gallery-stage">
+          <div class="carousel">
+            <img
+              src="img/Baston.png"
+              alt="SafeStep en bastón"
+              class="carousel-img active"
+            />
+            <img
+              src="img/Brazalete.png"
+              alt="SafeStep en brazalete"
+              class="carousel-img"
+            />
+            <img
+              src="img/discapa.png"
+              alt="SafeStep vista de cerca"
+              class="carousel-img"
+            />
+            <img
+              src="img/muleta.png"
+              alt="SafeStep vista de cerca"
+              class="carousel-img"
+            />
+            <img
+              src="img/mayores.png"
+              alt="SafeStep vista de cerca"
+              class="carousel-img"
+            />
+            <img
+              src="img/Mano.png"
+              alt="SafeStep vista de cerca"
+              class="carousel-img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Preguntas frecuentes</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>¿SafeStep necesita internet para funcionar?</summary>
+            <p>
+              Sí, necesita conexión WiFi para enviar la alerta a la app. Sin
+              conexión, el sensor sigue detectando caídas, pero la notificación
+              no puede enviarse hasta que el dispositivo se reconecte.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>¿Cuánto dura la batería?</summary>
+            <p>
+              Estamos afinando esta cifra con pruebas de uso real. Pronto la vas
+              a encontrar aquí.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              ¿Qué pasa si el dispositivo se queda sin señal WiFi?
+            </summary>
+            <p>
+              La app te notifica que el dispositivo perdió conexión, para que
+              sepas revisarlo, aunque en ese momento no pueda enviar alertas de
+              caída.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              ¿Puedo usar SafeStep en un bastón y un brazalete al mismo tiempo?
+            </summary>
+            <p>
+              Cada dispositivo funciona de forma independiente. Puedes tener
+              varios, cada uno vinculado a su propia app.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="cta-banner">
+          <h2>¿Listo para probar SafeStep?</h2>
+          <p>
+            Descarga la app y sigue el manual de instalación para dejarlo
+            funcionando en minutos.
+          </p>
+          <div class="cta-row center">
+            <a href="manual.html" class="btn btn-primary">Ver manual</a>
+            <a href="contactos.html" class="btn btn-ghost">Contacto</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer>
-    <p>© 2026 SafeStep — Tecnología para el cuidado que acompaña.</p>
-  </footer>
-</body>
+      <p>© 2026 SafeStep — Tecnología para el cuidado que acompaña.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>

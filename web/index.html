@@ -10,9 +10,22 @@
   <!-- Barra de navegación -->
   <nav>
     <div class="nav-inner">
-      <div class="brad" >Paso seguro</div>
-      <ul class="navlinks">
-        <li><a href="index.html" Class="active">Home</a></li>
+      <div class="brad" >
+        <span style="--i:1">P</span>
+        <span style="--i:2">a</span>
+        <span style="--i:3">s</span>
+        <span style="--i:4">o</span>
+        <span style="--i:5">&nbsp;</span> <!-- Espacio entre palabras -->
+        <span style="--i:6">s</span>
+        <span style="--i:7">e</span>
+        <span style="--i:8">g</span>
+        <span style="--i:9">u</span>
+        <span style="--i:10">r</span>
+        <span style="--i:11">o</span>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+      <ul class="navlinks" id="navlinks">
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="Contactos.html">Contactos</a></li>
         <li><a href="Manual.html">Manual</a></li>
         <li><a href="SafeStep.html">SafeStep</a></li> 
@@ -27,7 +40,7 @@
       <div class="Kicker">Detecta · Alerta · Protege</div>
       <h1>Safe Step</h1>
       <p>Tecnología inteligente que reconoce una caída en segundos y avisa a quien cuida de ti, incluso cuando no puedes pedir ayuda tú mismo.</p>
-      <div class="cta-row">
+      <div class="cta-row seccion-morada">
         <a href="SafeStep.html" class="btn btn-primary">Conocer SafeStep</a>
         <a href="Manual.html" class="btn btn-ghost ">Ver manual</a>
       </div>
@@ -46,8 +59,8 @@
   <section>
   <div class="wrap">
     <div class="section-head">
-      <h2>¿Y si una caída pudiera <span class="highlight">detectarse a tiempo</span>?</h2>
-      <p>SafeStep identifica los movimientos de una caída y envía una alerta directa a la aplicación, sin que nadie tenga que hacer nada más.</p>
+      <h2 class="estilotexto">¿Y si una caída pudiera <span class="highlight">detectarse a tiempo</span>?</h2>
+      <p >SafeStep identifica los movimientos de una caída y envía una alerta directa a la aplicación, sin que nadie tenga que hacer nada más.</p>
     </div>
 
     <div class="grid-4">
@@ -135,6 +148,6 @@
 
 
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

@@ -1,27 +1,249 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manual</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<nav>
-    <!-- Barra de navegación -->
-    <div class="nav-inner">
-      <div class="brad" >Paso seguro</div>
-      <ul class="navlinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Contactos.html">Contactos</a></li>
-        <li><a href="Manual.html" Class="active">Manual</a></li>
-        <li><a href="SafeStep.html">SafeStep</a></li> 
-      </ul>
-    </div>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manual</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <!-- Barra de navegación -->
+      <div class="nav-inner">
+        <div class="brad" >
+        <span style="--i:1">P</span>
+        <span style="--i:2">a</span>
+        <span style="--i:3">s</span>
+        <span style="--i:4">o</span>
+        <span style="--i:5">&nbsp;</span> <!-- Espacio entre palabras -->
+        <span style="--i:6">s</span>
+        <span style="--i:7">e</span>
+        <span style="--i:8">g</span>
+        <span style="--i:9">u</span>
+        <span style="--i:10">r</span>
+        <span style="--i:11">o</span>
+      </div>
+        <button class="menu-toggle" aria-label="Abrir menú">☰</button>
+        <ul class="navlinks" id="navlinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Contactos.html">Contactos</a></li>
+          <li><a href="Manual.html" class="active">Manual</a></li>
+          <li><a href="SafeStep.html">SafeStep</a></li>
+        </ul>
+      </div>
+    </nav>
 
-  <footer>
-    <p>© 2026 SafeStep — Tecnología para el cuidado que acompaña.</p>
-  </footer>
-</body>
+    <!-- Contenido del manual -->
+    <!-- Sección de instalación -->
+    <section class="manual-section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Manual de instalación</h2>
+          <p>
+            Sigue estos pasos para dejar tu SafeStep instalado y funcionando.
+          </p>
+          <div class="seccion-morada">
+          <a
+            href="TU_LINK_DE_DESCARGA_AQUI" target="_blank"
+            class="btn btn-primary download-btn"
+            >⬇ Descargar la app</a
+          >
+        </div>
+        </div>
+
+        <div class="manual-block">
+          <h3>Instalar la aplicación</h3>
+          <ol class="step-list">
+            <li>
+              <span class="step-number">1</span>
+              <div class="step-text">
+                Descarga el APK desde el link proporcionado.
+              </div>
+            </li>
+            <li>
+              <span class="step-number">2</span>
+              <div class="step-text">
+                Antes de instalar, desactiva temporalmente Play Protect — es
+                necesario porque la app no viene de la tienda oficial:
+                <ol class="substep-list">
+                  <li>Abre la app de <strong>Play Store</strong>.</li>
+                  <li>
+                    Toca tu foto de perfil, en la esquina superior derecha.
+                  </li>
+                  <li>En el menú, selecciona <strong>Play Protect</strong>.</li>
+                  <li>
+                    Toca el ícono de engranaje (⚙) en la esquina superior
+                    derecha.
+                  </li>
+                  <li>
+                    Desactiva la opción
+                    <strong>"Analizar apps con Play Protect"</strong>.
+                  </li>
+                  <li>
+                    Confirma tocando <strong>Desactivar</strong> en el mensaje
+                    que aparece.
+                  </li>
+                </ol>
+                <p class="step-note">
+                  Nota: en algunos celulares, Play Store ofrece la opción
+                  directa "Pausar por 24 horas" — si la ves, puedes usarla en
+                  vez de los pasos anteriores. Recuerda volver a activar Play
+                  Protect después de instalar SafeStep, para mantener tu celular
+                  protegido.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="step-number">3</span>
+              <div class="step-text">
+                Abre el archivo APK descargado e instálalo.
+              </div>
+            </li>
+            <li>
+              <span class="step-number">4</span>
+              <div class="step-text">
+                Al abrir la app por primera vez, permite las notificaciones push
+                en segundo plano. Es indispensable: sin este permiso, no
+                recibirás las alertas de caída.
+              </div>
+            </li>
+            <li>
+              <span class="step-number">5</span>
+              <div class="step-text">
+                Entra al ícono de configuración para conectar el sistema de
+                alertas.
+              </div>
+            </li>
+            <li>
+              <span class="step-number">6</span>
+              <div class="step-text">
+                Ingresa la contraseña que te proporcionó tu proveedor de
+                SafeStep.
+              </div>
+            </li>
+            <li>
+              <span class="step-number">7</span>
+              <div class="step-text">Da clic en <strong>Conectar</strong>.</div>
+            </li>
+          </ol>
+        </div>
+        <div class="manual-block">
+          <!-- Sección de conexión a la red -->
+          <h3>Conectar el dispositivo a la red</h3>
+          <ol class="step-list">
+            <li>
+              <span class="step-number">1</span>
+              <div class="step-text">
+                Una vez encendido el dispositivo, verás que aparece una red WiFi
+                llamada <strong>SafeStep</strong> — conéctate a ella desde los
+                ajustes WiFi de tu celular.
+              </div>
+            </li>
+            <li>
+              <span class="step-number">2</span>
+              <div class="step-text">
+                Abre tu navegador y entra a <strong>192.168.4.1</strong>. En
+                muchos celulares, al conectarte a la red esto sucede
+                automáticamente.
+              </div>
+            </li>
+            <li>
+              <span class="step-number">3</span>
+              <div class="step-text">
+                La página te preguntará si deseas configurar la red. Da clic en
+                <strong>Continuar</strong> para ir al formulario de
+                credenciales.
+              </div>
+            </li>
+            <li>
+              <span class="step-number">4</span>
+              <div class="step-text">
+                Ingresa el <strong>SSID</strong>: el nombre exacto de tu red
+                WiFi, tal como aparece en tu lista de redes.
+              </div>
+            </li>
+            <li>
+              <span class="step-number">5</span>
+              <div class="step-text">
+                Ingresa el <strong>PASSWORD</strong>: la contraseña de tu red
+                WiFi, tal como la usas normalmente.
+              </div>
+            </li>
+            <li>
+              <span class="step-number">6</span>
+              <div class="step-text">Da clic en <strong>Conectar</strong>.</div>
+            </li>
+            <li>
+              <span class="step-number">7</span>
+              <div class="step-text">
+                Tu dispositivo está listo — en el panel principal de la app
+                verás el estado <strong>"Conectado"</strong>.
+              </div>
+            </li>
+          </ol>
+        </div>
+        <!-- Sección de reconfiguración -->
+        <div class="manual-block">
+          <h3>¿Necesitas conectar el dispositivo a otra red?</h3>
+          <ol class="step-list">
+            <li>
+              <span class="step-number">1</span>
+              <div class="step-text">
+                Desde la app, da clic en <strong>Reconfigurar</strong>.
+              </div>
+            </li>
+            <li>
+              <span class="step-number">2</span>
+              <div class="step-text">
+                Sigue los 4 pasos que se te indican en la pantalla de
+                reconfiguración.
+              </div>
+            </li>
+            <li>
+              <span class="step-number">3</span>
+              <div class="step-text">
+                El <strong>paso 1 es el más importante</strong> — es el que
+                inicia todo el proceso de reconfiguración.
+              </div>
+            </li>
+          </ol>
+        </div>
+        <!-- Sección de problemas posibles -->
+        <div class="manual-block">
+          <h3>Problemas posibles</h3>
+          <div class="issue-list">
+            <div class="issue">
+              <div class="issue-icon">⚡</div>
+              <div>
+                <div class="issue-title">
+                  Se fue la luz y apareció la red de configuración de nuevo
+                </div>
+                <p class="issue-text">
+                  No te alarmes, es un protocolo de seguridad normal. Si después
+                  de que vuelva la luz la red sigue apareciendo, es necesario
+                  volver a configurar el dispositivo siguiendo los pasos
+                  anteriores.
+                </p>
+              </div>
+            </div>
+            <div class="issue">
+              <div class="issue-icon">🛠️</div>
+              <div>
+                <div class="issue-title">El dispositivo no funciona</div>
+                <p class="issue-text">
+                  Contáctanos desde nuestra
+                  <a href="contactos.html">página de contacto</a> y te ayudamos
+                  a resolverlo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="script.js" defer></script>
+    <footer>
+      <p>© 2026 SafeStep — Tecnología para el cuidado que acompaña.</p>
+    </footer>
+  </body>
 </html>
