@@ -212,14 +212,13 @@ nav {
   transition: color 0.3s ease;
 }
 
-.btn-primary::before {
+/*.btn-primary::before {
   content: '';
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  /* Degradado cónico que simula la línea de luz */
   background: conic-gradient(from 0deg, 
     transparent 40%, 
     #FF4500 60%, 
@@ -228,9 +227,9 @@ nav {
     transparent 100%);
   animation: girarBorde 3s linear infinite;
   z-index: -2;
-}
+}*/
 
-.btn-primary::after {
+/*.btn-primary::after {
   content: '';
   position: absolute;
   inset: 3px;
@@ -241,21 +240,20 @@ nav {
 }
 
 .btn-primary:hover {
-  /* El texto se vuelve morado para que se lea si el fondo es blanco */
-  color: #6C5CE7; 
+ /* color: #6C5CE7; 
 }
 .seccion-morada .btn-primary:hover {
-  color: #ffffff; /* Evita que se borre el texto */
-}
+  color: #ffffff; 
+/*}
 
 .btn-primary:hover::after {
-  /* ¡MAGIA! Copia automáticamente el color del fondo de la sección actual */
+  
   background: inherit; 
 }
 @keyframes girarBorde {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+}*/
 
 .btn-ghost {
   background: #FFFFFF;
@@ -298,13 +296,44 @@ nav {
   grid-template-columns: 1fr 1fr;
   gap: 22px;
 }
-
+:root {
+  --card-violeta: #6C5CE7;
+  --card-teal: #17A398;
+  --card-coral: #FF7A59;
+  --card-ambar: #F4A340;
+}
 .card {
-  background: #ffff;
   border-radius: 20px;
   padding: 28px;
-  box-shadow: 0 20px 40px -20px rgba(76, 60, 150, 0.25);
+  color: #fff;
+  box-shadow: 0 20px 40px -20px rgba(76, 60, 150, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
+.card:nth-child(1) { background: var(--card-violeta); }
+.card:nth-child(2) { background: var(--card-coral); }
+.card:nth-child(3) { background: var(--card-teal); }
+.card:nth-child(4) { background: var(--card-ambar); }
+
+.card h3 {
+  color: #fff;
+}
+
+.card p {
+  color: rgba(255, 255, 255, 0.85);
+}
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 28px 50px -20px rgba(76, 60, 150, 0.45);
+}
+.icon-badge {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .icon-badge {
+  transform: rotate(-8deg) scale(1.1);
+}
+
 
 .icon-badge {
   width: 52px;
@@ -324,7 +353,7 @@ nav {
 
 .card p {
   margin: 0;
-  color: #5B6B7C;
+  color: #000000;
   font-size: 0.96rem;
   line-height: 1.5;
 }
